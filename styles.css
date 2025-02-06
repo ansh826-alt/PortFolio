@@ -36,8 +36,12 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(136,140,237,1) 33%, rgba(16,180,213,1) 67%, rgba(0,212,255,1) 100%);
+    /* background: #919aee; */
+    background-color: #919aee;
     color: #111;
+}
+.logo:hover{
+    color: white;
 }
 .logo-container{
     display: flex;
@@ -80,11 +84,7 @@ nav {
     color: #00bcd4;
 }
 
-img:hover {
-    transform: scale(1.1);
-    transition: 500ms;
-    opacity: 90%;
-}
+
 
 .btn {
     padding: 10px 20px;
@@ -110,7 +110,17 @@ img:hover {
     justify-content: center;
     align-items: center;
 }
-
+img:hover {
+    transform: scale(1.1);
+    transition: 500ms;
+    opacity: 90%;   
+}
+.about-container img{
+    height: 90%;
+}
+img{
+    width: 50px;
+}
 a {
     text-decoration: none;
     color: white;
