@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* Ensure background animation covers the entire viewport */
 .background-animation {
     position: fixed;
@@ -33,10 +34,10 @@ nav {
     padding: 15px 50px;
 }
 
+
 .logo {
     font-size: 24px;
     font-weight: bold;
-    /* background: #919aee; */
     background-color: #919aee;
     color: #111;
 }
@@ -65,6 +66,21 @@ nav {
 
 .nav-links li a:hover {
     color: #00bcd4;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+    
+    .nav-links {
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 10px;
+        align-items: center;
+    }
+    .hero-content {
+        padding: 20px;
+    }
 }
 
 /* Hero Section */
@@ -103,24 +119,31 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
+}
+.about a{
+    /* width: 200px; */
+    height: 30px;
+    padding-top: 20px;
+    text-align: center;
+    /* margin-left: 550px; */
+    font-size: 20px;
 }
 
 .about-container {
+    margin-left: 100px;
+    margin-right: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 img:hover {
     transform: scale(1.1);
     transition: 500ms;
     opacity: 90%;   
 }
-.about-container img{
-    height: 90%;
-}
-img{
-    width: 50px;
-}
+
 a {
     text-decoration: none;
     color: white;
@@ -132,12 +155,15 @@ a:hover {
 }
 
 .about-container img {
-    width: 150px;
-    height: 200px;
+    width: 140px;
+    height: 150px;
     border-radius: 50%;
     margin-right: 20px;
 }
-
+.CV{
+    display: flex;
+    justify-content: center;
+}
 /* Skills Section */
 .skills {
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
@@ -180,6 +206,7 @@ a:hover {
     flex-direction: column;
 }
 
+
 h2 {
     background-color: #919aee;
     width: 50vw;
@@ -199,9 +226,13 @@ h2:hover{
 }
 .projects-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+    /* width: 400px; */
 }
+
 
 .project-card {
     background: #1b1755;
@@ -221,7 +252,17 @@ h2:hover{
     width: 100%;
     border-radius: 10px;
 }
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column; /* Stack the project cards vertically */
+        align-items: center;
+    }
 
+    .project-card {
+        width: 80%; /* Adjust width of project cards */
+        margin-bottom: 20px;
+    }
+}
 /* Contact Section */
 .contact {
     background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
@@ -248,26 +289,27 @@ h2:hover{
     width: 100%;
 }
 
-.footer-section{
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(136,140,237,1) 33%, rgba(16,180,213,1) 67%, rgba(0,212,255,1) 100%);
-    background: linear-gradient(to top, #330867 0%,  #30cfd0 100%);
+.footer-section {
+    background: linear-gradient(to top, #330867 0%, #30cfd0 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 150px;
+    font-size: 20px;
 }
-.links{
+
+.links {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    
 }
 
 .links.p:hover{
     color: #111;
 }
-.link{
+.link {
     color: white;
     text-decoration: none;
 }
@@ -288,9 +330,7 @@ h2:hover{
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out, background 0.5s ease-in-out;
-    will-change: transform, background;
 }
-
 .c1 {
     display: flex;
     background-color: rgb(129, 115, 115);
@@ -317,4 +357,30 @@ h2:hover{
 .hero:hover {
     background-color: rgb(53, 29, 88);
     transition: 500ms;
+}
+@keyframes backgroundAnimation {
+    0% {
+        background: #00bcd4;
+    }
+    50% {
+        background: #0097a7;
+    }
+    100% {
+        background: #00bcd4;
+    }
+}
+
+.hire-link {
+    padding: 10px 20px;
+    background: #00bcd4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.1s ease;
+    animation: backgroundAnimation 1s ease-in-out infinite; /* Animation applied here */
+}
+
+.hire-link:hover {
+    background: #0097a7;
+    color: white;
 }
